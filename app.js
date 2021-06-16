@@ -1,6 +1,7 @@
 const kelvin = 273.15;
 
 const boton = document.getElementById("ciudad");
+$('#spinner').hide()
 const obtenerClima = () => {
   let ciudad = document.querySelector("#ciudad").value;
 
@@ -8,15 +9,13 @@ const obtenerClima = () => {
     mostrarError("#msj-error", "FALTA LLENAR CAMPOS");
     return;
   }
-
-  consultarAPI(ciudad);
+  consultarAPI(ciudad);    
 };
 
 const consultarAPI = async (ciudad) => {
-
   // !!!! NO ESTA EL APIKEY POR PRIVACIDAD!!! SI QUIERE PROBAR LA APP INGRESE A openweatermap y genere su apikey-----
   
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&appid=${apiKey}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&lang=es&appid=${apikey}`;
 
   const respuesta = await fetch(url);
   const resultado = await respuesta.json();
@@ -34,8 +33,10 @@ const consultarAPI = async (ciudad) => {
   let divResultado = document.querySelector("#divResultado");
 
   const { icon } = weather[0];
-
-  divResultado.innerHTML = `
+  $('#spinner').show()
+  setTimeout(() => {
+    $('#spinner').hide()
+    divResultado.innerHTML = `
         <div class="card text-white bg-dark">
             <img src="icons/${icon}.png" class="card-img-top" alt="...">
             <div class="card-body">
@@ -65,6 +66,10 @@ const consultarAPI = async (ciudad) => {
             </div>
         </div>
     `;
+  }, 1500);
+    
+  
+  
 };
 
 const mostrarError = (elemento, mensaje) => {

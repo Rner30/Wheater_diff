@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./sass/Spinner.css">
 
     <link rel="stylesheet" href="sass/styles.css" />
     <title>Document</title>
@@ -53,11 +54,20 @@
               </button>
             </div>
           </div>
-          <div class="col-lg-6" id="divResultado"></div>
+          <div class="col-lg-6" id="divResultado">
+            <div class="sk-chase" id="spinner" >
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+              <div class="sk-chase-dot"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 
   </body>
