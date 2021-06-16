@@ -1,0 +1,92 @@
+body{
+    background-color: dodgerblue;
+    background-image: url(../img/25501.jpg);
+    background-size: cover;
+    background-repeat: initial;
+    height: 100vh; 
+    font-family: 'Roboto', sans-serif;
+}
+    
+select{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 5%;
+    
+}
+.select__font{
+    font-size: 20px;
+}
+input{
+    width: 100%;
+    margin-bottom: 5%;
+    height: 40px;
+    border-radius: 10px; 
+}
+input::placeholder{
+    font-size: large;
+    font-weight: 400;
+}
+.temperatura__actual{
+    margin: 0px;
+}
+.btn__buscar{
+    height: 50px;
+}
+#divResultado{
+    img{
+        padding-top: 1em;
+    }
+}
+
+@media (min-width: 990px) {
+    .texto_tiempo{
+        position: absolute;
+        margin-top: 10%;
+        margin-left: 8%;
+    }
+    
+    #divResultado{
+        padding-left: 100px;
+        margin-top: 100px;
+        img{
+            width: 150px;
+            margin-left: 35%;
+            
+        }
+    }
+    input{
+        margin-top: 50%;
+    }
+}
+@media (max-width: 990px) {
+    .texto_tiempo{
+        position: absolute;
+        margin-top: 5%;
+        margin-left: 10%;
+    }
+    #divResultado{
+        
+        margin-top: 20px;
+        img{
+            width: 150px;
+            margin-left: 27%;
+        }
+    }
+    input{
+        margin-top: 20%;
+    }
+}
+
+.card{
+    border-radius: 30px;
+    content: "";
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .7;
+}
+.form-control{
+    font-size: 20px;
+}
